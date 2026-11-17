@@ -1,0 +1,24 @@
+# Example proposal; copy to .agent-workflow/agents.yml only after review.
+# sandbox_enforced is a declaration, not independent proof of host isolation.
+
+agents:
+  # The lead does not need an adapter. Claude read is restricted by the
+  # adapter; Claude write is deliberately disabled until an OS sandbox exists.
+  claude:
+    sandbox_enforced: false
+    strengths: [design, implementation, testing, debugging]
+
+  # Codex adapters explicitly set read-only/workspace-write sandbox modes.
+  # Write mode also clears extra writable roots; installed CLI behavior still
+  # needs local verification before relying on it for sensitive work.
+  codex:
+    sandbox_enforced: true
+    strengths: [review, implementation, testing, debugging]
+
+roles:
+  lead: claude
+  implementer: claude
+  reviewer: [codex]
+  # Worker is optional. Do not assign the reviewer as worker for the same task.
+  worker: []
+  # explorer: []
