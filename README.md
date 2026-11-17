@@ -6,7 +6,8 @@ A personal, tool-agnostic collection of reusable skills for AI coding agents. Ea
 
 | Skill | Description |
 | --- | --- |
-| [Unit Testing](skills/unit-testing/SKILL.md) | Design, write, review, and improve reliable, maintainable unit tests. |
+| [Unit Testing](skills/unit-testing/SKILL.md) | Language-agnostic guidance for designing, writing, reviewing and improving unit tests, including contracts, scenarios, test doubles, isolation, determinism, verification and flaky or failing tests. |
+| [Multi-Agent Development](skills/multi-agent-dev/SKILL.md) | Coordinate a lead and separate coding-agent CLI processes for independent review, read-only exploration or isolated implementation, with configuration, handoff and safety guidance. |
 
 ## Repository structure
 
@@ -15,11 +16,27 @@ A personal, tool-agnostic collection of reusable skills for AI coding agents. Ea
 ├── README.md
 ├── LICENSE
 └── skills/
+    ├── multi-agent-dev/
+    │   ├── SKILL.md
+    │   ├── assets/
+    │   │   └── agents.example.yml
+    │   ├── references/
+    │   │   ├── adapters.md
+    │   │   ├── handoff-protocol.md
+    │   │   └── prompts/
+    │   │       ├── explorer.md
+    │   │       ├── reviewer.md
+    │   │       └── worker.md
+    │   └── scripts/
+    │       ├── run-agent.sh
+    │       └── adapters/
+    │           ├── claude.sh
+    │           └── codex.sh
     └── unit-testing/
         └── SKILL.md
 ```
 
-Each skill lives in its own directory and is defined by a `SKILL.md` file. The file begins with YAML metadata (`name` and `description`) followed by the instructions for the agent.
+Each skill lives in its own directory and is defined by a `SKILL.md` file. The file begins with YAML metadata (`name` and `description`) followed by the instructions for the agent. Supporting assets, references, prompts and scripts live alongside it when needed. For `multi-agent-dev`, `agents.example.yml` is a proposal, not an active configuration; follow the skill's setup and permission guidance before invoking peer agents.
 
 ## Using a skill
 
