@@ -6,6 +6,7 @@ A personal, tool-agnostic collection of reusable skills for AI coding agents. Ea
 
 | Skill | Description |
 | --- | --- |
+| [Commit Workflow](skills/commit-workflow/SKILL.md) | Review Git changes and prepare Conventional Commit messages; commit and push only with explicit authorization, while preventing AI attribution and `.DS_Store` files. |
 | [Unit Testing](skills/unit-testing/SKILL.md) | Language-agnostic guidance for designing, writing, reviewing and improving unit tests, including contracts, scenarios, test doubles, isolation, determinism, verification and flaky or failing tests. |
 | [Multi-Agent Development](skills/multi-agent-dev/SKILL.md) | Coordinate a lead and separate coding-agent CLI processes for independent review, read-only exploration or isolated implementation, with configuration, handoff and safety guidance. |
 
@@ -13,9 +14,14 @@ A personal, tool-agnostic collection of reusable skills for AI coding agents. Ea
 
 ```text
 .
+├── .gitignore
+├── AGENTS.md
+├── CLAUDE.md
 ├── README.md
 ├── LICENSE
 └── skills/
+    ├── commit-workflow/
+    │   └── SKILL.md
     ├── multi-agent-dev/
     │   ├── SKILL.md
     │   ├── assets/
